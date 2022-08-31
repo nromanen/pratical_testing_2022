@@ -26,14 +26,17 @@ Any assumptions that apply to the test
 Required test data
 
 ## Test Steps
-
-|| Step No. || Step description || Expected result ||
+| Step No.      | Step description        | Expected result   |
+| ------------- |:-------------:| -----:|
 | 1. | <what a tester should do> | <what a tester should see when they do that> |
 
-Keep this section clear and concise (a list would be fine), but don’t leave out any necessary details.
 
 ## Expected Result
 
 The expected result tells the tester what they should experience as a result of the test steps.
 
 This is how the tester determines if the test case is a “pass” or “fail”.
+
+  ## Requirement
+  
+  Link for corresponding requirements
