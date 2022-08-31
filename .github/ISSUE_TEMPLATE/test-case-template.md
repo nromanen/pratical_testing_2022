@@ -13,10 +13,6 @@ assignees: ''
 
 The description should tell the tester what they’re going to test and include any other pertinent information such as the test environment, test data, and preconditions/assumptions.
 
-### Environment
-
-# <environment setup>
-
 ### Precondition
 
 Any preconditions that must be met prior to the test being executed.
@@ -27,7 +23,7 @@ Any assumptions that apply to the test
 
 ### Input data
 
-#* <data>
+Required test data
 
 ## Test Steps
 
