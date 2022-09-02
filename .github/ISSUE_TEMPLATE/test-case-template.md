@@ -17,9 +17,6 @@ The description should tell the tester what they’re going to test and include 
 
 Any preconditions that must be met prior to the test being executed.
 
-### Assumptions
-
-Any assumptions that apply to the test
 
 ### Input data
 
