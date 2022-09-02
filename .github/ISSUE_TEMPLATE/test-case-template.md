@@ -27,8 +27,9 @@ Required test data
 
 ## Test Steps
 | Step No.      | Step description        | Expected result   |
-| ------------- |:-------------:| -----:|
-| 1. | <what a tester should do> | <what a tester should see when they do that> |
+|-------------|:-------------|:-----|
+| 1. | what a tester should do | what a tester should see when they do that |
+| 2. | second | second expected |
 
 
 ## Expected Result
