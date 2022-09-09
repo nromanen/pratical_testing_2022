@@ -1,3 +1,5 @@
 Equivalence partitioning and Boundary value analysis
 https://docs.google.com/spreadsheets/d/193j7IzEJv7XDLlyCryS-ZcnKH-IVd3svTnRI3aD98hs/edit?usp=sharing
 
+Decision tables
+https://docs.google.com/spreadsheets/d/1zkYFOo-jxyYuXbNdKqn-lkJ8qi-NZ6WbkCaLSB57SDs/edit?usp=sharing
