@@ -20,6 +20,11 @@ Nataliia V.
 Misha
 7.	*Show the list of french customers’ names who used to order french products.
 
+SELECT customers.contact_name FROM customers
+JOIN orders
+ON customers.customer_id = orders.customer_id
+WHERE customers.country = 'France' AND orders.ship_country = 'France'
+
 Vika
 8.	*Show the total ordering sum calculated for each country of customer.
 
