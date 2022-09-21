@@ -5,7 +5,6 @@ from
 group by
 having 
 
-
 2.	Show the list of french customers’ names who have made more than one order (use a subquery).
 3.	Show the list of customers’ names who used to order the ‘Tofu’ product (use a subquery).
 
