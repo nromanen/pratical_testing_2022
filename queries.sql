@@ -15,7 +15,7 @@ Liza
 Dasha
 5.	*Show the list of french customers’ names who used to order non-french products (use left join).
 
-Nataliia V
+Nataliia V.
 6.	*Show the list of french customers’ names who used to order non-french products (use a subquery).
 
 Misha
@@ -34,7 +34,7 @@ Nik
 11.	*Show the list of employees’ names along with names of their chiefs (use left join with the same table).
 12.	*Show the list of cities where employees and customers are from and where orders have been made to. Duplicates should be eliminated.
 
-Natalii F
+Natalii F.
 13.	Show first, last names and ages of 3 eldest employees.
 14.	Show the list of all cities where the employees are from.
 
