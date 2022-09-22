@@ -45,6 +45,15 @@ Ira
 Vita
 10.	*Show the list of product categories along with total ordering sums calculated for the orders made for the products of each category, during the year 1997.
 
+SELECT categories.category_name, 
+sum(order_details.quantity*(order_details.unit_price-order_details.unit_price*order_details.discount))
+FROM categories
+Join products ON products.category_id = categories.category_id
+JOIN order_details ON order_details.product_id = products.product_id
+JOIN orders ON orders.order_id = order_details.order_id
+WHERE orders.order_date between '1997-01-01' and '1997-12-31'
+Group by category_name;
+
 Nik
 11.	*Show the list of employees’ names along with names of their chiefs (use left join with the same table).
 
