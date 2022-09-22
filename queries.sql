@@ -17,6 +17,17 @@ Dasha
 Nataliia V.
 6.	*Show the list of french customers’ names who used to order non-french products (use a subquery).
 
+SELECT customer_id
+FROM customers
+WHERE country = 'France' AND customer_id IN 
+	(SELECT DISTINCT customer_id 
+	FROM orders
+	JOIN order_details ON orders.order_id=order_details.order_id
+	JOIN products ON products.product_id=order_details.product_id
+	JOIN suppliers ON products.supplier_id=suppliers.supplier_id
+	WHERE suppliers.country <>'France')
+ORDER BY customer_id;
+
 Misha
 7.	*Show the list of french customers’ names who used to order french products.
 
