@@ -47,7 +47,22 @@ Vita
 
 Nik
 11.	*Show the list of employees’ names along with names of their chiefs (use left join with the same table).
+
+SELECT employees.first_name || ' ' || employees.last_name AS employee, employees2.first_name || ' ' || employees2.last_name AS boss
+FROM employees LEFT JOIN employees employees2 
+ON employees.reports_to = employees2.employee_id;
+
 12.	*Show the list of cities where employees and customers are from and where orders have been made to. Duplicates should be eliminated.
+
+SELECT DISTINCT employees.city
+FROM employees
+UNION
+SELECT DISTINCT customers.city
+FROM customers
+UNION
+SELECT DISTINCT orders.ship_city
+FROM orders
+ORDER BY city ASC
 
 Natalii F.
 13.	Show first, last names and ages of 3 eldest employees.
