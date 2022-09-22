@@ -22,6 +22,18 @@ Liza
 
 Dasha
 5.	*Show the list of french customers’ names who used to order non-french products (use left join).
+SELECT DISTINCT c.contact_name
+FROM customers AS c
+LEFT JOIN orders AS o
+	ON o.customer_id = c.customer_id
+LEFT JOIN order_details AS od
+	ON od.order_id = o.order_id
+LEFT JOIN products AS p
+	ON p.product_id = od.product_id
+LEFT JOIN suppliers AS s
+	ON s.supplier_id = p.supplier_id
+WHERE c.country = 'France' AND s.country!='France'
+ORDER BY c.contact_name;
 
 Nataliia V.
 6.	*Show the list of french customers’ names who used to order non-french products (use a subquery).
