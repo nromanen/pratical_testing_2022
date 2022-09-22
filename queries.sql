@@ -66,5 +66,15 @@ ORDER BY city ASC
 
 Natalii F.
 13.	Show first, last names and ages of 3 eldest employees.
+
+SELECT first_name, last_name, date_part('year',age(birth_date)) as age
+FROM employees
+ORDER BY age DESC
+LIMIT 3
+
 14.	Show the list of all cities where the employees are from.
+
+SELECT DISTINCT city
+FROM employees
+
 
