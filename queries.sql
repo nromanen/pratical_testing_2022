@@ -66,10 +66,16 @@ ORDER BY customer_id;
 Misha
 7.	*Show the list of french customers’ names who used to order french products.
 
-SELECT customers.contact_name FROM customers
-JOIN orders
-ON customers.customer_id = orders.customer_id
-WHERE customers.country = 'France' AND orders.ship_country = 'France'
+SELECT contact_name
+FROM customers
+WHERE country = 'France' AND customer_id IN 
+(SELECT DISTINCT customer_id 
+FROM orders
+JOIN order_details ON orders.order_id=order_details.order_id
+JOIN products ON products.product_id=order_details.product_id
+JOIN suppliers ON products.supplier_id=suppliers.supplier_id
+WHERE suppliers.country ='France')
+ORDER BY contact_name;
 
 Vika
 8.	*Show the total ordering sum calculated for each country of customer.
