@@ -25,6 +25,14 @@ where product_name = 'Tofu')
 
 Liza
 4.	*Show the list of customers’ names who used to order the ‘Tofu’ product, along with the total amount of the product they have ordered and with the total sum for ordered product calculated.
+Select Customers.Customer_id, Sum(quantity), Sum(order_details.unit_price*quantity)
+from Order_details
+Join Orders On Order_details.Order_id = Orders.Order_id
+Join Customers On  Orders.Customer_id =Customers.Customer_id
+Join Products On Products.Product_id = Order_details.product_id
+Where Products.Product_id = 14
+Group By Customers.Customer_id;
+
 
 Dasha
 5.	*Show the list of french customers’ names who used to order non-french products (use left join).
