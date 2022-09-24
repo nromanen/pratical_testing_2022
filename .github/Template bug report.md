@@ -9,6 +9,9 @@ assignees: ''
 **Date Time**
 MM-DD-YYYY HH:MM
 
+**Severity**
+High / Medium / Low
+
 **Priority**
 High / Medium / Low
 
