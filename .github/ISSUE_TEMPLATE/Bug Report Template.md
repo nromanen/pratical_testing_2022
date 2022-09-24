@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 **Date Time**
-MM-DD-YYYY HH:MM
+DD-MM-YYYY HH:MM
 
 **Severity**
 Blocker/Critical/Major/Minor/Trivial
