@@ -10,7 +10,7 @@ assignees: ''
 MM-DD-YYYY HH:MM
 
 **Severity**
-High / Medium / Low
+Blocker/Critical/Major/Minor/Trivial
 
 **Priority**
 High / Medium / Low
