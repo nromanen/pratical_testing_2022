@@ -61,12 +61,13 @@ Nataliia V.
 SELECT customer_id
 FROM customers
 WHERE country = 'France' AND customer_id IN 
-	(SELECT DISTINCT customer_id 
+	(SELECT customer_id 
 	FROM orders
 	JOIN order_details ON orders.order_id=order_details.order_id
 	JOIN products ON products.product_id=order_details.product_id
 	JOIN suppliers ON products.supplier_id=suppliers.supplier_id
-	WHERE suppliers.country <>'France')
+	WHERE suppliers.country <>'France'
+	GROUP BY customer_id)
 ORDER BY customer_id;
 
 Misha
