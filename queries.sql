@@ -1,26 +1,32 @@
 Liubomyr
 1.	Show the list of french customers’ names who have made more than one order (use grouping).
-select customers.names
-from
-group by
-having 
+
+select customer_id 
+from customers 
+where customer_id in 
+(select customer_id from orders
+ join order_details ON orders.order_id = order_details.order_id
+ JOIN products ON products.product_id = order_details.product_id
+where lower(product_name) like '%tofu%')
 
 2.	Show the list of french customers’ names who have made more than one order (use a subquery).
 
-SELECT customer_id
-FROM customers
-WHERE country = 'France' AND customer_id IN 
-	(SELECT DISTINCT customer_id 
-	FROM orders
-	JOIN order_details ON orders.order_id=order_details.order_id
-	where order_details.quantity >= 1)  
+select customer_id 
+from customers as outer_cust 
+where country = 'France' and 
+(select count(order_id)
+from orders
+where orders.customer_id = outer_cust.customer_id) > 1;
 
 3.	Show the list of customers’ names who used to order the ‘Tofu’ product (use a subquery).
 
-select customer_id from customers where customer_id in (select customer_id from orders
-													   join order_details ON orders.order_id=order_details.order_id
-	JOIN products ON products.product_id=order_details.product_id
-where product_name = 'Tofu')
+select customer_id 
+from customers 
+where customer_id in 
+(select customer_id from orders
+ join order_details ON orders.order_id = order_details.order_id
+ JOIN products ON products.product_id = order_details.product_id
+where lower(product_name) like '%tofu%')
 
 
 Liza
