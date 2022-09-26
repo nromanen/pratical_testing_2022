@@ -90,6 +90,31 @@ Vika
 Ira
 9.	*Show the total ordering sums calculated for each customer’s country for domestic and non-domestic products separately (e.g.: “France – French products ordered – Non-french products ordered” and so on for each country).
 
+SELECT DISTINCT customers.customer_id, SUM (order_details.unit_price * order_details.quantity) AS not_domestic_sum, 
+(SELECT SUM (order_details.unit_price * order_details.quantity) AS domestic_sum
+FROM orders
+JOIN order_details
+	ON order_details.order_id = orders.order_id
+JOIN products
+	ON products.product_id = order_details.product_id
+JOIN suppliers
+	ON suppliers.supplier_id = products.supplier_id
+WHERE customers.country = suppliers.country 
+GROUP BY customers.customer_id)
+FROM customers
+JOIN orders
+	ON orders.customer_id = customers.customer_id
+JOIN order_details
+	ON order_details.order_id = orders.order_id
+JOIN products
+	ON products.product_id = order_details.product_id
+JOIN suppliers
+	ON suppliers.supplier_id = products.supplier_id
+WHERE customers.country != suppliers.country 
+GROUP BY customers.customer_id;
+
+
+
 Vita
 10.	*Show the list of product categories along with total ordering sums calculated for the orders made for the products of each category, during the year 1997.
 
