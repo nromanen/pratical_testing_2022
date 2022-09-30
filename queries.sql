@@ -87,6 +87,15 @@ ORDER BY contact_name;
 Vika
 8.	*Show the total ordering sum calculated for each country of customer.
 
+SELECT DISTINCT customers.customer_id, customers.country, SUM (order_details.unit_price * order_details.quantity)
+FROM customers
+JOIN orders ON orders.customer_id = customers.customer_id
+JOIN order_details ON order_details.order_id = orders.order_id
+JOIN products ON products.product_id = order_details.product_id
+JOIN suppliers ON suppliers.supplier_id = products.supplier_id
+WHERE customers.country = suppliers.country 
+GROUP BY customers.customer_id;
+
 Ira
 9.	*Show the total ordering sums calculated for each customer’s country for domestic and non-domestic products separately (e.g.: “France – French products ordered – Non-french products ordered” and so on for each country).
 
