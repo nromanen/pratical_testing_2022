@@ -1,0 +1,67 @@
+-- Calculate the average freight of all employees who work not with Western region.
+SELECT employee_id, AVG(freight)
+FROM orders
+WHERE employee_id NOT IN (SELECT employees.employee_id
+FROM employees 
+JOIN employee_territories 
+ON employee_territories.employee_id = employees.employee_id
+JOIN territories
+ON territories.territory_id = employee_territories.territory_id
+JOIN region
+ON region.region_id = territories.region_id
+WHERE region.region_description LIKE 'Western')
+GROUP BY employee_id
+ORDER BY employee_id;
+
+-- Show first and last names of employees who shipped orders in cities of USA.
+SELECT DISTINCT first_name, last_name
+FROM employees JOIN orders
+ON orders.employee_id = employees.employee_id
+WHERE orders.ship_country LIKE 'USA';
+
+-- Show the names of products and their total cost, which were delivered by German suppliers
+SELECT product_name, SUM(order_details.unit_price*order_details.quantity)
+FROM products JOIN order_details
+ON products.product_id = order_details.product_id
+JOIN suppliers
+ON suppliers.supplier_id = products.supplier_id
+WHERE suppliers.country LIKE 'Germany'
+GROUP BY product_name;
+
+-- Show first and last names of employees that don’t work with Eastern region.
+SELECT first_name, last_name
+FROM employees
+WHERE employee_id NOT IN (SELECT employees.employee_id
+FROM employees 
+JOIN employee_territories 
+ON employee_territories.employee_id = employees.employee_id
+JOIN territories
+ON territories.territory_id = employee_territories.territory_id
+JOIN region
+ON region.region_id = territories.region_id
+WHERE region.region_description LIKE 'Eastern')
+ORDER BY first_name, last_name;
+
+-- Show the name of customers that prefer to order non-domestic products.
+Select *
+FROM
+(Select Customers.Customer_id as c_id, count(*) as count_domestic_orders
+From Customers Join Orders
+On Customers.Customer_id = Orders.Customer_id
+Join Order_details On Order_details.Order_id = Orders.Order_id
+Join Products On Products.Product_id = Order_details.product_id
+Join Suppliers On Suppliers.Supplier_id = Products.Supplier_id
+Where Suppliers.country <> Customers.Country
+Group By Customers.Customer_id ) T1
+Full Join
+(Select Customers.Customer_id as c_id, count(*) as count_no_domestic_orders
+From Customers Join Orders
+On Customers.Customer_id = Orders.Customer_id
+Join Order_details On Order_details.Order_id = Orders.Order_id
+Join Products On Products.Product_id = Order_details.product_id
+Join Suppliers On Suppliers.Supplier_id = Products.Supplier_id
+Where Suppliers.country = Customers.Country
+Group By Customers.Customer_id ) T2
+On T1.c_id=T2.c_id
+Where T1.count_domestic_orders > T2.count_no_domestic_orders
+Order by T1.c_id;
