@@ -1,0 +1,11 @@
+INSERT INTO public.category (id, title, description) 
+VALUES (3, 'Movies', 'Category includes information about new and classic films of any genre, interesting facts about cast and film making process')
+
+INSERT INTO public.category (id, title, description)
+VALUES (4, 'Games', 'Category includes information about game industry latest news and exciting releases')
+
+INSERT INTO public."user" (id, email, username, password, user_info)
+VALUES (3, 'samantha123@gmail.com', 'sammylee', '675sQ', 'Journalist from L. A., freelancer')
+
+INSERT INTO public."user" (id, email, username, password, user_info)
+VALUES (4, 'kikaas@gmail.com', 'nastykika', 'tyU098', 'Editor, Dnipro, UA')
