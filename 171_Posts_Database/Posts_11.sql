@@ -167,6 +167,12 @@ COPY public.post (id, user_id, title, category_id, description, created_at, publ
 8	8	Dog Patron became the hero of the animated series	3	The four-legged favorite of all children of Ukraine, the dog Patron, became the hero of the adventure animated series of the same name.\nIn the first series, the dog Patron tells his friend cat Tom about his working day, the State Emergency Service reports on Facebook	2023-01-10 10:29:15.532735+02	\N
 9	5	The perils of football	5	Last October, I did a podcast with George F. Will. We got on the subject of football. About football, Will was very stern	2023-01-10 22:29:00.556786+02	2023-01-20 00:00:00+02
 10	5	The Future of Car Technology	6	Color-changing cars. Flying taxis. And a gaming-style tablet that can steer a vehicle. Car companies descended on CES in Las Vegas to show off their latest ideas	2023-01-10 22:33:20.841375+02	2023-01-25 00:00:00+02
+11  1   Migraine treatment  1  Migraine treatment is aimed at stopping symptoms and preventing future attacks.
+Many medications have been designed to treat migraines. Medications used to combat migraines fall into two broad categories:
+Pain-relieving medications. Also known as acute or abortive treatment, these types of drugs are taken during migraine attacks and are designed to stop symptoms.
+Preventive medications. These types of drugs are taken regularly, often daily, to reduce the severity or frequency of migraines.
+Your treatment choices depend on the frequency and severity of your headaches, whether you have nausea and vomiting with your headaches, how disabling your headaches are, and other medical conditions you have.  2021-07-25 08:15:48+00   2021-08-25 07:40:00+00
+12  1  Out of My Mind by Sharon M. Draper  7  Melody is not like most people. She cannot walk or talk, but she has a photographic memory; she can remember every detail of everything she has ever experienced. She is smarter than most of the adults who try to diagnose her and smarter than her classmates in her integrated classroom - the very same classmates who dismiss her as mentally challenged because she cannot tell them otherwise. But Melody refuses to be defined by cerebral palsy. And she is determined to let everyone know it - somehow.  2021-10-25 08:17:48+00   2021-12-12 07:45:00+00
 \.
 
 
