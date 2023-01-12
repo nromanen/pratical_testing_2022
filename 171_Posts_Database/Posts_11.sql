@@ -5,7 +5,7 @@
 -- Dumped from database version 15.1
 -- Dumped by pg_dump version 15.1
 
--- Started on 2023-01-12 12:26:19
+-- Started on 2023-01-12 14:12:14
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -158,8 +158,6 @@ INSERT INTO public.post (id, user_id, title, category_id, description, created_a
 Of course, we take for granted that you are choosing Greece for your vacation, and for that reason, here we present to you the best way to plan your trip to Greece, to make your Greece itinerary one for the books. Enjoy!', '2023-01-09 09:46:19.231469+02', '2023-01-10 02:00:00+02');
 INSERT INTO public.post (id, user_id, title, category_id, description, created_at, published_at) VALUES (2, 2, 'Behind Closed Doors by B.A. Paris', 7, 'The perfect marriage? Or the perfect lie?
 Everyone knows a couple like Jack and Grace. He has looks and wealth; she has charm and elegance. He’s a dedicated attorney who has never lost a case; she is a flawless homemaker, a masterful gardener and cook, and dotes on her disabled younger sister. Though they are still newlyweds, they seem to have it all. You might not want to like them, but you do...', '2023-01-09 09:54:46.546447+02', '2023-06-24 03:00:00+03');
-INSERT INTO public.post (id, user_id, title, category_id, description, created_at, published_at) VALUES (3, 3, 'Game of the Year 2022: Elden Ring', 4, 'Elden Ring is an expansive fantasy Action-RPG game developed by FromSoftware, Inc. under the direction of Hidetaka Miyazaki and created in collaboration with famed author George R.R. Martin. Elden Ring is a massive iteration on what FromSoftware began with the Souls series, bringing its relentlessly challenging combat to an incredible open world that gives us the freedom to choose our own path.', '2023-01-09 13:03:09.007772+02', NULL);
-INSERT INTO public.post (id, user_id, title, category_id, description, created_at, published_at) VALUES (4, 4, 'The Pale Blue Eye', 3, 'Set in 1830, it follows a young Edgar Allan Poe (Harry Melling) in his days at America’s prestigious West Point military academy. Yet to become the gothic literary icon we know him as these days, the brilliant but moody Poe turns sleuth when a fellow cadet, Leroy Fry, is murdered and his heart is removed from his chest. Other killings follow.', '2023-01-09 13:17:39.722454+02', NULL);
 INSERT INTO public.post (id, user_id, title, category_id, description, created_at, published_at) VALUES (5, 5, 'Raceday Live', 5, 'Darrell Williams and Jamie Lynch present from the studio ahead of live racing from Wolverhampton this evening, with Robert Cooper on the track. US racing also takes place', '2023-01-09 21:11:46.509725+02', NULL);
 INSERT INTO public.post (id, user_id, title, category_id, description, created_at, published_at) VALUES (6, 6, 'iPhone 15 Models', 6, 'Apple is expected to offer the Dynamic Island feature that made its debut on its current generation iPhone 14 Pro on all four iPhone 15 models', '2023-01-09 21:17:08.766304+02', NULL);
 INSERT INTO public.post (id, user_id, title, category_id, description, created_at, published_at) VALUES (8, 8, 'Dog Patron became the hero of the animated series', 3, 'The four-legged favorite of all children of Ukraine, the dog Patron, became the hero of the adventure animated series of the same name.
@@ -176,6 +174,8 @@ INSERT INTO public.post (id, user_id, title, category_id, description, created_a
 INSERT INTO public.post (id, user_id, title, category_id, description, created_at, published_at) VALUES (13, 2, 'Venom(2018)', 3, 'Venom is a 2018 American superhero film featuring the Marvel Comics character of the same name, produced by Columbia Pictures in association with Marvel[5] and Tencent Pictures, and distributed by Sony Pictures Releasing. It is the first film in Spider-Man Universe (SSU) and is directed by Ruben Fleischer from a screenplay by Jeff Pinkner, Scott Rosenberg, and Kelly Marcel. It stars Tom Hardy as Eddie Brock and Venom alongside Michelle Williams, Riz Ahmed, Scott Haze, and Reid Scott. In the film, struggling journalist Brock gains superpowers after becoming the host of an alien symbiote, Venom, whose species plans to invade Earth.', '2021-01-11 02:00:00+02', '2022-01-12 02:00:00+02');
 INSERT INTO public.post (id, user_id, title, category_id, description, created_at, published_at) VALUES (14, 4, 'Silent Hill 2 remake', 4, 'So far, Silent Hill 2 remake has been announced for PS5 and PC. These are the only platforms listed in the announcement trailer, and the game won’t be coming to Xbox at launch.', '2023-01-09 13:03:09.007772+02', '2023-02-12 00:00:00+02');
 INSERT INTO public.post (id, user_id, title, category_id, description, created_at, published_at) VALUES (15, 3, 'The Super Mario Bros. Movie', 3, 'The Super Mario Bros. Movie is an upcoming computer-animated fantasy adventure comedy film based on Nintendo Mario video game franchise; Nintendo also co-produced the film with Illumination and its distributor Universal Pictures.', '2022-01-09 13:03:09.007772+02', '2022-01-13 00:00:00+02');
+INSERT INTO public.post (id, user_id, title, category_id, description, created_at, published_at) VALUES (3, 3, 'Game of the Year 2022: Elden Ring', 4, 'Elden Ring is an expansive fantasy Action-RPG game developed by FromSoftware, Inc. under the direction of Hidetaka Miyazaki and created in collaboration with famed author George R.R. Martin. Elden Ring is a massive iteration on what FromSoftware began with the Souls series, bringing its relentlessly challenging combat to an incredible open world that gives us the freedom to choose our own path.', '2023-01-09 13:03:09.007772+02', '2023-02-02 00:00:00+02');
+INSERT INTO public.post (id, user_id, title, category_id, description, created_at, published_at) VALUES (4, 4, 'The Pale Blue Eye', 3, 'Set in 1830, it follows a young Edgar Allan Poe (Harry Melling) in his days at America’s prestigious West Point military academy. Yet to become the gothic literary icon we know him as these days, the brilliant but moody Poe turns sleuth when a fellow cadet, Leroy Fry, is murdered and his heart is removed from his chest. Other killings follow.', '2023-01-09 13:17:39.722454+02', '2023-02-02 00:00:00+02');
 
 
 --
@@ -336,7 +336,7 @@ ALTER TABLE ONLY public.post_user
     ADD CONSTRAINT post_user_user_id_fkey FOREIGN KEY (user_id) REFERENCES public."user"(id);
 
 
--- Completed on 2023-01-12 12:26:19
+-- Completed on 2023-01-12 14:12:14
 
 --
 -- PostgreSQL database dump complete
