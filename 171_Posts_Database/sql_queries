@@ -1,0 +1,19 @@
+
+Вивести користувача з найбільшою кількістю публікацій
+
+select username, count(username) as count_number
+from "user" join post on "user".id = post.user_id
+Group by username
+having count(username)=(select count(title)
+from post
+group by user_id
+order by count(title) desc
+limit 1)
+
+
+
+
+
+
+
+
