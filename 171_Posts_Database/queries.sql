@@ -15,6 +15,18 @@ where id not in (select user_id
 from post_user
 where comment is NOT NULL)
 
+--Select posts which were created at the same date as today, but at other years.
+
+select id, title from post
+where extract(day from created_at) = '12' and extract(month from created_at) = '01' and extract(year from created_at) !=  extract(year from current_date)
+order by created_at
+
+--Set publication date with interval 1 month after post creation.
+
+UPDATE public.post
+	SET published_at=created_at + interval '1 month'
+	WHERE published_at is null;
+
 
 
 
