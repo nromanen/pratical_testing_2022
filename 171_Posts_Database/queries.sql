@@ -1,4 +1,4 @@
---Вивести користувача з найбільшою кількістю публікацій
+--Show the user/users with the most publications
 
 select username, count(username) as count_number
 from "user" join post on "user".id = post.user_id
