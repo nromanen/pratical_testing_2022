@@ -27,6 +27,13 @@ UPDATE public.post
 	SET published_at=created_at + interval '1 month'
 	WHERE published_at is null;
 
+Filko Marta 
+--Display sorted posts by the number of comments
+
+SELECT post.id, post.title, count(comment)
+	FROM public.post join post_user on post.id=post_user.post_id
+	group by post.id
+	order by count(comment) desc
 
 
 
