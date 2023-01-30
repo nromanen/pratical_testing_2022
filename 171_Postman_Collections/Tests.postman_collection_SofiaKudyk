@@ -1,0 +1,438 @@
+{
+	"info": {
+		"_postman_id": "73ee23fe-6c31-4cb3-a6d3-bbf4d7d5341f",
+		"name": "Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25362616"
+	},
+	"item": [
+		{
+			"name": "Positive(name, credo, city)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Correct message\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"User successfully updated.\");\r",
+							"});\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{QC_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"city\":\"{{city}}\",\"name\":\"{{name}}\",\"userCredo\":\"{{credo}}\",\"showLocation\":null,\"showEcoPlace\":null,\"showShoppingList\":null,\"socialNetworks\":[]}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_URL}}/user/profile",
+					"host": [
+						"{{base_URL}}"
+					],
+					"path": [
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NameNegativeInclusion(symbols)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"pm.test(\"Correct message(symbols)\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[0].message).to.eql(\"name must contain only \\\"ЁёІіЇїҐґЄєА-Яа-яA-Za-z-'0-9 .\\\", dot can only be in the center of the name\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{QC_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"city\":\"city\",\"name\":\"{{name1}}\",\"userCredo\":\"credo\",\"showLocation\":null,\"showEcoPlace\":null,\"showShoppingList\":null,\"socialNetworks\":[]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_URL}}/user/profile",
+					"host": [
+						"{{base_URL}}"
+					],
+					"path": [
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NameNegative(name size)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Your test name\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[0].message).to.eql(\"name must have no less than 1 and no more than 30 symbols\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{QC_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"city\":\"city\",\"name\":\"{{name2}}\",\"userCredo\": null,\"showLocation\":null,\"showEcoPlace\":null,\"showShoppingList\":null,\"socialNetworks\":[]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_URL}}/user/profile",
+					"host": [
+						"{{base_URL}}"
+					],
+					"path": [
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NameNegativeNull",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code\", function () {\r",
+							"    pm.response.to.have.status(400)\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Correct message(symbols)\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    const error_message=jsonData.map(element=>element.message)\r",
+							"    pm.expect(error_message).contain(\"name must contain only \\\"ЁёІіЇїҐґЄєА-Яа-яA-Za-z-'0-9 .\\\", dot can only be in the center of the name\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Correct message (size)\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    const error_message=jsonData.map(element=>element.message)\r",
+							"    pm.expect(error_message).contain(\"name must have no less than 1 and no more than 30 symbols\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{QC_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"city\":null,\"name\":\"\",\"userCredo\":null,\"showLocation\":null,\"showEcoPlace\":null,\"showShoppingList\":null,\"socialNetworks\":[]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_URL}}/user/profile",
+					"host": [
+						"{{base_URL}}"
+					],
+					"path": [
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CityNegativeInclusion(symbols))",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400)\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Correct message\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[0].message).to.eql(\"must match \\\"[ЁёІіЇїҐґЄєА-Яа-яA-Za-z-'\\\\s)(!,]{1,85}\\\"\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{QC_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"city\":\"{{city1}}\",\"name\":\"sofia\",\"userCredo\":null,\"showLocation\":null,\"showEcoPlace\":null,\"showShoppingList\":null,\"socialNetworks\":[]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_URL}}/user/profile",
+					"host": [
+						"{{base_URL}}"
+					],
+					"path": [
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CityNegative(city size)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Correct message\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[0].message).to.eql(\"size must be between 1 and 85\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{QC_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"city\":\"{{city2}}\",\"name\":\"name\",\"userCredo\":\"credo\",\"showLocation\":null,\"showEcoPlace\":null,\"showShoppingList\":null,\"socialNetworks\":[]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_URL}}/user/profile",
+					"host": [
+						"{{base_URL}}"
+					],
+					"path": [
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CredoNegative(credo size)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"pm.test(\"Correct message\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[0].message).to.eql(\"size must be between 0 and 170\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{QC_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"city\":\"city\",\"name\":\"name\",\"userCredo\": \"{{credo1}}\",\"showLocation\":null,\"showEcoPlace\":null,\"showShoppingList\":null,\"socialNetworks\":[]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_URL}}/user/profile",
+					"host": [
+						"{{base_URL}}"
+					],
+					"path": [
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "QC_TOKEN",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "base_URL",
+			"value": "https://greencity-user.testgreencity.ga",
+			"type": "string"
+		}
+	]
+}
