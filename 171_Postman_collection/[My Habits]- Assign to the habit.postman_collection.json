@@ -15,7 +15,8 @@
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
-							"});"
+							"});\r",
+							"pm.globals.set(\"token\", pm.response.json().accessToken);"
 						],
 						"type": "text/javascript"
 					}
