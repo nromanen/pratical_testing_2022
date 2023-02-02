@@ -1,0 +1,135 @@
+{
+	"info": {
+		"_postman_id": "91b5e486-e0af-480f-85ad-93fbb50f6bb5",
+		"name": "Update_event_title_positive",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25337922"
+	},
+	"item": [
+		{
+			"name": "Update event_positive",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// pm.test(\"Event description\", function () {",
+							"//     var jsonData = pm.response.json();",
+							"//     pm.expect(jsonData.description).to.eql(\"In a workshop it is possible to look at ready models, process of their creation, current and future development\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{QC_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "eventDto",
+							"value": "{{t}}{{value}}{{r}}{{event_id}}{{r2}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://greencity.testgreencity.ga/events/update",
+					"protocol": "https",
+					"host": [
+						"greencity",
+						"testgreencity",
+						"ga"
+					],
+					"path": [
+						"events",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "My events",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							" console.log(pm.response.json().page.filter(element=>element.organizer.id==25).map(element=>element.id))",
+							"",
+							" pm.test(\"My events\", function () {",
+							"var jsonData = pm.response.json();",
+							"// pm.expect(jsonData.page.length).to.be.above(1);",
+							"pm.expect(jsonData.currentPage).to.eql(0);",
+							"// pm.expect(jsonData.totalElements).to.eql(11);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{QC_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "https://greencity.testgreencity.ga/events/myEvents/relatedEvents?page=0&size=6",
+					"protocol": "https",
+					"host": [
+						"greencity",
+						"testgreencity",
+						"ga"
+					],
+					"path": [
+						"events",
+						"myEvents",
+						"relatedEvents"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "6"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
