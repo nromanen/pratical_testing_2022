@@ -1,0 +1,743 @@
+{
+  "id": "4121c1cf-b3eb-4971-9f5f-cf4883fe3343",
+  "version": "2.0",
+  "name": "GC",
+  "url": "https://www.testgreencity.ga/#/greenCity",
+  "tests": [{
+    "id": "76c00adb-2935-477b-af5b-c133d94afbbf",
+    "name": "Positive",
+    "commands": [{
+      "id": "63c86052-00e4-4ea4-a262-2dc288cc352d",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.testgreencity.ga/GreenCityClient/#/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e44f2be0-3775-4846-8a60-bc43e83ca458",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1050x660",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f61cd614-2ae7-40a7-9669-7ee64b788dd8",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Sign in",
+      "targets": [
+        ["linkText=Sign in", "linkText"],
+        ["css=.header_sign-in-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Sign in')]", "xpath:link"],
+        ["xpath=//ul/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Sign in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1fc3d3c2-4e45-4fa2-927e-055ad5e755e0",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//mat-dialog-container[@id='mat-dialog-0']/app-auth-modal/div/div/div[2]/div/app-sign-in/form/input", "xpath:idRelative"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": "adminubs@starmaker.email"
+    }, {
+      "id": "5c8fe0d9-6454-4f38-a181-08b1f54c8802",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=form-control password-signin", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//mat-dialog-container[@id='mat-dialog-0']/app-auth-modal/div/div/div[2]/div/app-sign-in/form/div/input", "xpath:idRelative"],
+        ["xpath=//form/div/input", "xpath:position"]
+      ],
+      "value": "Test-User123"
+    }, {
+      "id": "90b500ee-d608-46a1-bd75-a285173d6ac1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.google-sign-in",
+      "targets": [
+        ["css=.google-sign-in", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//mat-dialog-container[@id='mat-dialog-0']/app-auth-modal/div/div/div[2]/div/app-sign-in/app-google-btn/button", "xpath:idRelative"],
+        ["xpath=//app-google-btn/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign in with Google')]", "xpath:innerText"]
+      ],
+      "value": "",
+      "opensWindow": true,
+      "windowHandleName": "win7508",
+      "windowTimeout": 2000
+    }, {
+      "id": "47e40b55-cdbe-4e77-8352-08502b775618",
+      "comment": "",
+      "command": "storeWindowHandle",
+      "target": "root",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fef61662-9cef-4e01-b63b-71c5e57c9f55",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${win7508}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "538648c2-a480-419f-8e29-24c8f46c9c61",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "38fcfad9-162f-4f79-b450-d3c2976b430d",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${root}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0263bec3-bdfb-4f6a-98f2-0054e7fef60b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.google-text-sign-in",
+      "targets": [
+        ["css=.google-text-sign-in", "css:finder"],
+        ["xpath=//mat-dialog-container[@id='mat-dialog-0']/app-auth-modal/div/div/div[2]/div/app-sign-in/app-google-btn/button/span", "xpath:idRelative"],
+        ["xpath=//button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Sign in with Google')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3a58381a-45ac-406c-84c4-b39aadfa9f89",
+      "comment": "",
+      "command": "click",
+      "target": "css=#mat-tab-label-0-1 > .mat-tab-label-content",
+      "targets": [
+        ["css=#mat-tab-label-0-1 > .mat-tab-label-content", "css:finder"],
+        ["xpath=//div[@id='mat-tab-label-0-1']/div", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4d911e55-6f7b-4fa5-909e-5ea1b5a3a6bc",
+      "comment": "",
+      "command": "click",
+      "target": "css=#create-button > span",
+      "targets": [
+        ["css=#create-button > span", "css:finder"],
+        ["xpath=//div[@id='create-button']/span", "xpath:idRelative"],
+        ["xpath=//a/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Add News')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "42b7bb76-1f75-4dba-ad00-ef5921efe66e",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "53e8f8a1-5d1f-4041-9f50-8e7a089d19cd",
+      "comment": "",
+      "command": "//click",
+      "target": "css=label > .ng-invalid",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ae049ce1-5f30-4a50-828e-8db55a4327ad",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//textarea",
+      "targets": [
+        ["css=label > .ng-invalid", "css:finder"],
+        ["xpath=//main[@id='main-content']/div/div[2]/form/div/div/div/label/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3aa46cef-130f-4461-a012-483f0ef319e4",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//textarea",
+      "targets": [
+        ["css=label > .ng-dirty", "css:finder"],
+        ["xpath=//main[@id='main-content']/div/div[2]/form/div/div/div/label/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "American Dream"
+    }, {
+      "id": "8e363738-0087-4441-896d-98a7cdd23cf9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.tag-news:nth-child(4)",
+      "targets": [
+        ["css=.tag-news:nth-child(4)", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//main[@id='main-content']/div/div[2]/form/div/div/div[2]/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Events')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "47843567-844d-4a7a-96f3-88d355ccff16",
+      "comment": "",
+      "command": "click",
+      "target": "css=.tag-news:nth-child(6)",
+      "targets": [
+        ["css=.tag-news:nth-child(6)", "css:finder"],
+        ["xpath=(//button[@type='button'])[4]", "xpath:attributes"],
+        ["xpath=//main[@id='main-content']/div/div[2]/form/div/div/div[2]/button[4]", "xpath:idRelative"],
+        ["xpath=//button[4]", "xpath:position"],
+        ["xpath=//button[contains(.,'Initiatives')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "75230471-24bd-4022-a602-51507b73fa7d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.tag-news:nth-child(5)",
+      "targets": [
+        ["css=.tag-news:nth-child(5)", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//main[@id='main-content']/div/div[2]/form/div/div/div[2]/button[3]", "xpath:idRelative"],
+        ["xpath=//button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'Education')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "25e799f0-7c0e-4333-b717-d9c179c300c1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ql-container",
+      "targets": [
+        ["css=.ql-container", "css:finder"],
+        ["xpath=//main[@id='main-content']/div/div[2]/form/div[2]/quill-editor/div[2]", "xpath:idRelative"],
+        ["xpath=//quill-editor/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3e069394-1f11-4457-91ea-6a126f2f6437",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ql-editor",
+      "targets": [
+        ["css=.ql-editor", "css:finder"],
+        ["xpath=//main[@id='main-content']/div/div[2]/form/div[2]/quill-editor/div[2]/div", "xpath:idRelative"],
+        ["xpath=//quill-editor/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "84572194-e542-46b6-9d7e-b5284aae8cc1",
+      "comment": "",
+      "command": "editContent",
+      "target": "css=.ql-editor",
+      "targets": [
+        ["css=.ql-editor", "css:finder"],
+        ["xpath=//main[@id='main-content']/div/div[2]/form/div[2]/quill-editor/div[2]/div", "xpath:idRelative"],
+        ["xpath=//quill-editor/div[2]/div", "xpath:position"]
+      ],
+      "value": "<p>kjsflkdjfklsdfjsklfjsklfjsklfjsklfjsdksdjkghkjghkfghsdkf</p>"
+    }, {
+      "id": "d3cb9c1e-da57-4213-b8cb-e15cbd60b423",
+      "comment": "",
+      "command": "click",
+      "target": "css=.submit",
+      "targets": [
+        ["css=.submit", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//main[@id='main-content']/div/div[2]/form/div[4]/button[3]", "xpath:idRelative"],
+        ["xpath=//div[4]/button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'Publish')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "75fcc217-0362-4adb-b3ef-e83730e57e3d",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cb243b8c-40d3-4b40-84bb-f9b5d2d8a6f3",
+      "comment": "",
+      "command": "click",
+      "target": "css=#mat-tab-label-1-1 > .mat-tab-label-content",
+      "targets": [
+        ["css=#mat-tab-label-1-1 > .mat-tab-label-content", "css:finder"],
+        ["xpath=//div[@id='mat-tab-label-1-1']/div", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3cd09a2e-b007-4061-b997-e508d023be68",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,136)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ee4dc75f-a38b-4bbf-b858-e01825719042",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.ng-star-inserted:nth-child(1) > app-one-news h3",
+      "targets": [],
+      "value": "American Dream"
+    }]
+  }, {
+    "id": "f58932c4-93a5-4f6b-95b5-ac3a229bd3f1",
+    "name": "Negative",
+    "commands": [{
+      "id": "c3787075-c6e7-474b-b42a-d8d288b62c59",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.testgreencity.ga/#/greenCity",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a29fd7a2-1704-400c-b7f7-b75bd0db9383",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1050x660",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b50fd80d-8d22-4950-af1b-212aeff4eef3",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Sign in",
+      "targets": [
+        ["linkText=Sign in", "linkText"],
+        ["css=.header_sign-in-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Sign in')]", "xpath:link"],
+        ["xpath=//ul/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Sign in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "39c98a6c-66f2-48c6-b510-c4555eab2ba6",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//mat-dialog-container[@id='mat-dialog-0']/app-auth-modal/div/div/div[2]/div/app-sign-in/form/input", "xpath:idRelative"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": "adminubs@starmaker.email"
+    }, {
+      "id": "e3a31766-7fde-4ecc-8f1e-7ae9d31f2f04",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=form-control password-signin", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//mat-dialog-container[@id='mat-dialog-0']/app-auth-modal/div/div/div[2]/div/app-sign-in/form/div/input", "xpath:idRelative"],
+        ["xpath=//form/div/input", "xpath:position"]
+      ],
+      "value": "Test-User123"
+    }, {
+      "id": "acb9e0ea-7b5a-41ee-a373-267535e73e08",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//mat-dialog-container[@id='mat-dialog-0']/app-auth-modal/div/div/div[2]/div/app-sign-in/app-google-btn/button",
+      "targets": [
+        ["css=.google-sign-in", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//mat-dialog-container[@id='mat-dialog-0']/app-auth-modal/div/div/div[2]/div/app-sign-in/app-google-btn/button", "xpath:idRelative"],
+        ["xpath=//app-google-btn/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign in with Google')]", "xpath:innerText"]
+      ],
+      "value": "",
+      "opensWindow": true,
+      "windowHandleName": "win1827",
+      "windowTimeout": 2000
+    }, {
+      "id": "a51c3eac-8093-4676-9382-fbf60f2eae44",
+      "comment": "",
+      "command": "storeWindowHandle",
+      "target": "root",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8573a0c5-cb3c-4e16-a8cc-0b227d00fa97",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${win1827}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2c04d2b4-4682-4d3b-8c73-a15d35260b0d",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "de3f0deb-ad01-4849-bc1b-e081e0ce5150",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${root}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b55a1e5e-5541-44ec-bb11-ab68497be7c7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.google-text-sign-in",
+      "targets": [
+        ["css=.google-text-sign-in", "css:finder"],
+        ["xpath=//mat-dialog-container[@id='mat-dialog-0']/app-auth-modal/div/div/div[2]/div/app-sign-in/app-google-btn/button/span", "xpath:idRelative"],
+        ["xpath=//button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Sign in with Google')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "204fd645-b5ce-45fb-86fb-5f871445ad44",
+      "comment": "",
+      "command": "click",
+      "target": "css=#mat-tab-label-0-1 > .mat-tab-label-content",
+      "targets": [
+        ["css=#mat-tab-label-0-1 > .mat-tab-label-content", "css:finder"],
+        ["xpath=//div[@id='mat-tab-label-0-1']/div", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2e3a26ca-57f5-4104-bbec-cf5957edd328",
+      "comment": "",
+      "command": "click",
+      "target": "css=#create-button > span",
+      "targets": [
+        ["css=#create-button > span", "css:finder"],
+        ["xpath=//div[@id='create-button']/span", "xpath:idRelative"],
+        ["xpath=//a/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Add News')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d857d11c-2cfd-42f3-a035-5b97db95c33e",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "32066f66-8213-4e3c-8ceb-ce0dbab453fe",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//textarea",
+      "targets": [
+        ["css=label > .ng-invalid", "css:finder"],
+        ["xpath=//main[@id='main-content']/div/div[2]/form/div/div/div/label/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5aedb8fa-5556-4456-a8f2-098c652354f3",
+      "comment": "",
+      "command": "click",
+      "target": "css=.tags",
+      "targets": [
+        ["css=.tags", "css:finder"],
+        ["xpath=//main[@id='main-content']/div/div[2]/form/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "93dbb380-2951-4dc2-8271-232d9032af7a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.tag-news:nth-child(4)",
+      "targets": [
+        ["css=.tag-news:nth-child(4)", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//main[@id='main-content']/div/div[2]/form/div/div/div[2]/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Events')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e05a52e0-4e0d-48ca-a24b-2442de47057c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.tag-news:nth-child(5)",
+      "targets": [
+        ["css=.tag-news:nth-child(5)", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//main[@id='main-content']/div/div[2]/form/div/div/div[2]/button[3]", "xpath:idRelative"],
+        ["xpath=//button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'Education')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2f53b7de-af7c-4503-b427-d4ef6a25b4d3",
+      "comment": "",
+      "command": "click",
+      "target": "css=.tag-news:nth-child(6)",
+      "targets": [
+        ["css=.tag-news:nth-child(6)", "css:finder"],
+        ["xpath=(//button[@type='button'])[4]", "xpath:attributes"],
+        ["xpath=//main[@id='main-content']/div/div[2]/form/div/div/div[2]/button[4]", "xpath:idRelative"],
+        ["xpath=//button[4]", "xpath:position"],
+        ["xpath=//button[contains(.,'Initiatives')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5c3e85c1-7a6a-4000-a2f7-c664ef3b96ec",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ql-editor",
+      "targets": [
+        ["css=.ql-editor", "css:finder"],
+        ["xpath=//main[@id='main-content']/div/div[2]/form/div[2]/quill-editor/div[2]/div", "xpath:idRelative"],
+        ["xpath=//quill-editor/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fc377200-3bc9-4e99-9a54-a91f7082d57c",
+      "comment": "",
+      "command": "editContent",
+      "target": "css=.ql-editor",
+      "targets": [
+        ["css=.ql-editor", "css:finder"],
+        ["xpath=//main[@id='main-content']/div/div[2]/form/div[2]/quill-editor/div[2]/div", "xpath:idRelative"],
+        ["xpath=//quill-editor/div[2]/div", "xpath:position"]
+      ],
+      "value": "<p>оліоаларвлаовдлаівдалівдаовдаівомдімл</p>"
+    }, {
+      "id": "84533b53-54fa-4792-85ac-659ee979c3b7",
+      "comment": "",
+      "command": "storeAttribute",
+      "target": "css=.submit@disabled",
+      "targets": [],
+      "value": "Publish_disabled"
+    }, {
+      "id": "11d88ab3-0741-41c6-b37e-41dfdb3169de",
+      "comment": "",
+      "command": "verify",
+      "target": "Publish_disabled",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "baebe122-d03b-475a-8f0c-295951b99f90",
+      "comment": "",
+      "command": "click",
+      "target": "css=label > .ng-invalid",
+      "targets": [
+        ["css=label > .ng-invalid", "css:finder"],
+        ["xpath=//main[@id='main-content']/div/div[2]/form/div/div/div/label/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "632c27fc-8956-413e-836a-e41c748df598",
+      "comment": "",
+      "command": "type",
+      "target": "css=label > .ng-touched",
+      "targets": [
+        ["css=label > .ng-touched", "css:finder"],
+        ["xpath=//main[@id='main-content']/div/div[2]/form/div/div/div/label/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "ВЩКУЬШ"
+    }, {
+      "id": "880b53ca-8f93-4fdb-b77f-a6c1600ab44e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.tag-news:nth-child(4)",
+      "targets": [
+        ["css=.tag-news:nth-child(4)", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//main[@id='main-content']/div/div[2]/form/div/div/div[2]/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Events ')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "00d424b2-d429-4c07-85b5-fc90a1f4ae20",
+      "comment": "",
+      "command": "click",
+      "target": "css=.tag-news:nth-child(5)",
+      "targets": [
+        ["css=.tag-news:nth-child(5)", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//main[@id='main-content']/div/div[2]/form/div/div/div[2]/button[3]", "xpath:idRelative"],
+        ["xpath=//button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'Education ')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6f89b556-9dbe-41bb-b3cc-57bd2ff2dc92",
+      "comment": "",
+      "command": "click",
+      "target": "css=.filters-color",
+      "targets": [
+        ["css=.filters-color", "css:finder"],
+        ["xpath=(//button[@type='button'])[4]", "xpath:attributes"],
+        ["xpath=//main[@id='main-content']/div/div[2]/form/div/div/div[2]/button[4]", "xpath:idRelative"],
+        ["xpath=//button[4]", "xpath:position"],
+        ["xpath=//button[contains(.,'Initiatives ')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b14744d8-cf55-4e97-a35c-120ade15cedd",
+      "comment": "",
+      "command": "storeAttribute",
+      "target": "css=.submit@disabled",
+      "targets": [],
+      "value": "Publish_disabled"
+    }, {
+      "id": "84464bef-f752-4a36-b225-15a4bbedee7d",
+      "comment": "",
+      "command": "verify",
+      "target": "Publish_disabled",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "562b6b8f-c56e-4a0f-ac37-e57e3f09b078",
+      "comment": "",
+      "command": "click",
+      "target": "css=.tag-news:nth-child(3)",
+      "targets": [
+        ["css=.tag-news:nth-child(3)", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//main[@id='main-content']/div/div[2]/form/div/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'News')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5516e6cb-7154-472a-8cf5-96d340a5e9e4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.tag-news:nth-child(4)",
+      "targets": [
+        ["css=.tag-news:nth-child(4)", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//main[@id='main-content']/div/div[2]/form/div/div/div[2]/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Events')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7ab182fb-4a0f-4e2b-84ba-7df7c71d357e",
+      "comment": "",
+      "command": "click",
+      "target": "id=main-content",
+      "targets": [
+        ["id=main-content", "id"],
+        ["css=#main-content", "css:finder"],
+        ["xpath=//main[@id='main-content']", "xpath:attributes"],
+        ["xpath=//main", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "86acf8cb-7911-4b88-96d6-8cc3f708b684",
+      "comment": "",
+      "command": "editContent",
+      "target": "css=.ql-editor",
+      "targets": [
+        ["css=.ql-editor", "css:finder"],
+        ["xpath=//main[@id='main-content']/div/div[2]/form/div[2]/quill-editor/div[2]/div", "xpath:idRelative"],
+        ["xpath=//quill-editor/div[2]/div", "xpath:position"]
+      ],
+      "value": "<p><br></p>"
+    }, {
+      "id": "e6311273-f401-41cd-8354-0a516cc617c5",
+      "comment": "",
+      "command": "storeAttribute",
+      "target": "css=.submit@disabled",
+      "targets": [],
+      "value": "Publish_disabled"
+    }, {
+      "id": "e085b34a-76c2-40fc-b5d4-c7260185f585",
+      "comment": "",
+      "command": "verify",
+      "target": "Publish_disabled",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "821b0c1b-6f22-428b-a5e2-bf3e25d7fe4e",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.textarea-description",
+      "targets": [
+        ["css=.textarea-description", "css:finder"],
+        ["xpath=//main[@id='main-content']/div/div[2]/form/div[2]/div/p", "xpath:idRelative"],
+        ["xpath=//div[2]/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'Must be minimum 20 and maximum 63 206 symbols')]", "xpath:innerText"]
+      ],
+      "value": "Must be minimum 20 and maximum 63 206 symbols"
+    }, {
+      "id": "3ff59bac-158b-468f-a9d3-858e969a6a27",
+      "comment": "",
+      "command": "//click",
+      "target": "xpath=//input[@type='text']",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6a8eded6-c2a8-419b-a3ee-8ebfa2a02fa2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.field-warning",
+      "targets": [
+        ["css=.field-warning", "css:finder"],
+        ["xpath=//input[@type='text']", "xpath:attributes"],
+        ["xpath=//main[@id='main-content']/div/div[2]/form/div/div/div[3]/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dc0a422b-7e0b-4f03-bd2d-5d25c82531f8",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//input",
+      "targets": [
+        ["css=.field-warning", "css:finder"],
+        ["xpath=//input[@type='text']", "xpath:attributes"],
+        ["xpath=//main[@id='main-content']/div/div[2]/form/div/div/div[3]/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "google.com.ua"
+    }, {
+      "id": "25f68283-da6d-4d84-97e2-23a2f5208caf",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=div:nth-child(3) .warning",
+      "targets": [
+        ["css=div:nth-child(3) .warning", "css:finder"],
+        ["xpath=//main[@id='main-content']/div/div[2]/form/div/div/div[3]/div/span", "xpath:idRelative"],
+        ["xpath=//div[3]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Please add the link of original article/news/post. Link must start with http(s)://')]", "xpath:innerText"]
+      ],
+      "value": "Please add the link of original article/news/post. Link must start with http(s)://"
+    }]
+  }],
+  "suites": [{
+    "id": "e83f0b6f-12ce-42f9-bda1-653dca830a6b",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["76c00adb-2935-477b-af5b-c133d94afbbf"]
+  }],
+  "urls": ["https://www.testgreencity.ga/GreenCityClient/#/", "https://www.testgreencity.ga/", "https://www.testgreencity.ga/GreenCity", "https://www.testgreencity.ga/#/GreenCity", "https://www.testgreencity.ga/#/greenCity"],
+  "plugins": []
+}
