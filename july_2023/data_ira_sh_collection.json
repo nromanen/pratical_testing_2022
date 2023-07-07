@@ -1,0 +1,4 @@
+[{ "email": "neolla@i.u", "password": "Greencity2!", "test_name": "email","error_message": "The user does not exist by this email"},
+{ "email": "neolla@i.ua", "password": "12345", "test_name":"password", "error_message": "Bad password"}
+]
+
