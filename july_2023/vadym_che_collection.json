@@ -1,0 +1,233 @@
+{
+	"info": {
+		"_postman_id": "5919be3b-87d2-4757-9a09-4b145dcab645",
+		"name": "GC_authorization",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27619442"
+	},
+	"item": [
+		{
+			"name": "GC_Sign_In",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"accessToken is appeared\", function () {\r",
+							"pm.expect(pm.response.json()).to.have.property(\"accessToken\")\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\": \"cherkasskij.vadim@gmail.com\", \"password\": \"Greencity2!\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://greencity-user.greencity.social/ownSecurity/signIn",
+					"protocol": "https",
+					"host": [
+						"greencity-user",
+						"greencity",
+						"social"
+					],
+					"path": [
+						"ownSecurity",
+						"signIn"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GC_Negative_Email(need_Envir.Serv_1)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Non Existing user\", function() {\r",
+							"    let data = pm.response.json()\r",
+							"    pm.expect(data.name).to.eql(\"email\")\r",
+							"    pm.expect(data.message).contain(pm.environment.get(\"User_Email\"))\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"email\": \"{{User_Email}}\", \"password\": \"{{Password}}\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://greencity-user.greencity.social/ownSecurity/signIn",
+					"protocol": "https",
+					"host": [
+						"greencity-user",
+						"greencity",
+						"social"
+					],
+					"path": [
+						"ownSecurity",
+						"signIn"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GC_Negative_Password",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"pm.test(\"Wrong password\" , function() {\r",
+							"    let data = pm.response.json()\r",
+							"    pm.expect(data.name).to.eql(\"password\")\r",
+							"    pm.expect(data.message).contain(\"Bad\")\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"email\": \"cherkasskij.vadim@gmail.com\", \"password\": \"Greencity1!\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://greencity-user.greencity.social/ownSecurity/signIn",
+					"protocol": "https",
+					"host": [
+						"greencity-user",
+						"greencity",
+						"social"
+					],
+					"path": [
+						"ownSecurity",
+						"signIn"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GC_Negative_Existing_User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Existing User\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"already registered\" , function() {\r",
+							"    let data = pm.response.json()[0]\r",
+							"    pm.expect(data.name).to.eql(\"email\")\r",
+							"    pm.expect(data.message).contain(\"already registered\")\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"email\": \"cherkasskij.vadim@gmail.com\", \"password\": \"Greencity2!\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://greencity-user.greencity.social/ownSecurity/signUp",
+					"protocol": "https",
+					"host": [
+						"greencity-user",
+						"greencity",
+						"social"
+					],
+					"path": [
+						"ownSecurity",
+						"signUp"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
