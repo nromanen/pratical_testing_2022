@@ -1,0 +1,4 @@
+[
+  {"EmailInvalid": "loveblessme@gmail.com", "PasswordValid": "Greencity2!", "invalid_key": "email", "error": "loveblessme@gmail.com"},
+  {"EmailValid": "loveblessme1@gmail.com", "PasswordInvalid": "Greencity2", "invalid_key": "password", "error": "Bad password"}
+]
